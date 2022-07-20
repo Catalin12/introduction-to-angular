@@ -7,13 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SimpleButtonComponent implements OnInit {
 	public numberOfClicks: number;
+
 	public constructor() {
 		this.numberOfClicks = 0;
 	}
 
 	public ngOnInit(): void {
 	}
-	increseNumberOfCounts() {
+	public increseNumberOfCounts(): void {
 		this.numberOfClicks++;
 	}
 
