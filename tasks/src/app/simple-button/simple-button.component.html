@@ -1,1 +1,2 @@
-<button (click)="increseNumberOfCounts()">Number of clicks {{numberOfClicks}}</button>
+<button (click)="changeInputStatus()">{{inputStatus?("Disable"):("Enable")}}</button><input type="text"
+	placeholder="Name" [disabled]="!inputStatus">

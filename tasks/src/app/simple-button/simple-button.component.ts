@@ -1,22 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
 	selector: 'simple-button',
 	templateUrl: './simple-button.component.html',
-	styleUrls: ['./simple-button.component.css']
+	styleUrls: ['./simple-button.component.css'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SimpleButtonComponent implements OnInit {
-	public numberOfClicks: number;
+	public inputStatus: boolean;
 
 	public constructor() {
-		this.numberOfClicks = 0;
+		this.inputStatus = false;
+	}
+
+	public changeText(input: string): void {
+		console.log(input)
 	}
 
 	public ngOnInit(): void {
 	}
 
-	public increseNumberOfCounts(): void {
-		this.numberOfClicks++;
+	public changeInputStatus(): void {
+		this.inputStatus = !this.inputStatus;
 	}
-
 }
