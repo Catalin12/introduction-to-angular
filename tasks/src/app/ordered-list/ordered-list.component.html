@@ -1,0 +1,8 @@
+<button (click)="changeListStatus()">{{ isListEnable ? "Disable" : "Enable" }}</button>
+<div *ngIf="isListEnable">
+	<ol>
+		<ng-container *ngFor="let name of listNames">
+			<li> {{name}} </li>
+		</ng-container>
+	</ol>
+</div>
