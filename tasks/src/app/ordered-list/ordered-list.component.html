@@ -2,7 +2,7 @@
 <div *ngIf="isListEnable">
 	<ol>
 		<ng-container *ngFor="let name of listNames">
-			<li> {{name}} </li>
+			<li class="highlightingName" [ngClass]="{'highlightingName': name == 'Catalin'}"> {{name}} </li>
 		</ng-container>
 	</ol>
 </div>
