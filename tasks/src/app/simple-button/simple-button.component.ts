@@ -14,6 +14,7 @@ export class SimpleButtonComponent implements OnInit {
 
 	public ngOnInit(): void {
 	}
+
 	public increseNumberOfCounts(): void {
 		this.numberOfClicks++;
 	}
