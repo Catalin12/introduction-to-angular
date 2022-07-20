@@ -1,1 +1,3 @@
-<button (click)="increseNumberOfCounts()">Number of clicks {{numberOfClicks}}</button>
+<button (click)="changeInputStatus()">{{ isInputEnable ? "Disable" : "Enable" }}</button><input type="text"
+	placeholder="Name" [disabled]="!isInputEnable" (keyup)="handleKeyUp($event)">
+<p *ngIf="isInputEnable">greeting, {{ greetingText }}</p>

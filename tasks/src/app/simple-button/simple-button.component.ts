@@ -6,17 +6,23 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./simple-button.component.css']
 })
 export class SimpleButtonComponent implements OnInit {
-	public numberOfClicks: number;
+	public isInputEnable: boolean;
+	public greetingText: string;
 
 	public constructor() {
-		this.numberOfClicks = 0;
+		this.isInputEnable = false;
+		this.greetingText = "";
 	}
 
 	public ngOnInit(): void {
 	}
 
-	public increseNumberOfCounts(): void {
-		this.numberOfClicks++;
+	public changeInputStatus(): void {
+		this.isInputEnable = !this.isInputEnable;
+	}
+
+	public handleKeyUp(event: any): void {
+		this.greetingText = event.target.value;
 	}
 
 }
