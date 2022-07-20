@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
 	selector: 'simple-button',
 	templateUrl: './simple-button.component.html',
-	styleUrls: ['./simple-button.component.css'],
+	styleUrls: ['./simple-button.component.css']
 })
 export class SimpleButtonComponent implements OnInit {
 	public isInputEnable: boolean;
@@ -19,10 +19,6 @@ export class SimpleButtonComponent implements OnInit {
 
 	public changeInputStatus(): void {
 		this.isInputEnable = !this.isInputEnable;
-		if (this.isInputEnable === false) {
-			this.greetingText = "";
-		}
-
 	}
 
 	public handleKeyUp(event: any): void {
