@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./simple-button.component.css']
 })
 export class SimpleButtonComponent implements OnInit {
+	public numberOfClicks: number;
 
-	constructor() { }
+	public constructor() {
+		this.numberOfClicks = 0;
+	}
 
 	public ngOnInit(): void {
+	}
+
+	public increseNumberOfCounts(): void {
+		this.numberOfClicks++;
 	}
 
 }
