@@ -1,10 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
 	selector: 'simple-button',
 	templateUrl: './simple-button.component.html',
 	styleUrls: ['./simple-button.component.css'],
-	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SimpleButtonComponent implements OnInit {
 	public isInputEnable: boolean;
