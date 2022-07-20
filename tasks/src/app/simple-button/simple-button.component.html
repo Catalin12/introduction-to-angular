@@ -1,3 +1,3 @@
-<button (click)="changeInputStatus()">{{ inputStatus?("Disable"):("Enable") }}</button><input type="text"
-	placeholder="Name" [disabled]="!inputStatus" (keyup)="handleKeyUp($event)">
-<p ng-hide="!inputStatus">{{ showedText }}</p>
+<button (click)="changeInputStatus()">{{ isInputEnable ? "Disable" : "Enable" }}</button><input type="text"
+	placeholder="Name" [disabled]="!isInputEnable" (keyup)="handleKeyUp($event)">
+<p *ngIf="isInputEnable">{{ "greeting " + greetingText }}</p>

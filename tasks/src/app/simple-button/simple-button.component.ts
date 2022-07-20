@@ -7,34 +7,27 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SimpleButtonComponent implements OnInit {
-	public inputStatus: boolean;
-	public showedText: string;
-	public saveShowedText: string;
+	public isInputEnable: boolean;
+	public greetingText: string;
 
 	public constructor() {
-		this.inputStatus = false;
-		this.saveShowedText = "";
-		this.showedText = "";
+		this.isInputEnable = false;
+		this.greetingText = "";
 	}
 
 	public ngOnInit(): void {
 	}
 
 	public changeInputStatus(): void {
-		this.inputStatus = !this.inputStatus;
-		if (this.inputStatus === false) {
-			this.saveShowedText = this.showedText;
-			this.showedText = "";
-		} else this.showedText = this.saveShowedText;
+		this.isInputEnable = !this.isInputEnable;
+		if (this.isInputEnable === false) {
+			this.greetingText = "";
+		}
 
 	}
 
 	public handleKeyUp(event: any): void {
-		if (this.inputStatus) {
-			this.showedText = "greetings " + event.target.value;
-		} else {
-			this.showedText = "";
-		}
+		this.greetingText = event.target.value;
 	}
 
 }
