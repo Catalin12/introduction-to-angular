@@ -1,8 +1,9 @@
 <button (click)="changeListStatus()">{{ isListEnable ? "Disable" : "Enable" }}</button>
 <div *ngIf="isListEnable">
 	<ol>
-		<ng-container *ngFor="let name of listNames">
-			<li [ngClass]="{'highlighting-name': name == 'Catalin'}"> {{name}} </li>
+		<ng-container *ngFor="let name of listNames; let i = index;">
+			<li [ngClass]="{'highlighting-name': name == 'Catalin'}"
+				[ngStyle]="{'font-size' : i % 2 === 0 ? '30px' : null}"> {{name}} </li>
 		</ng-container>
 	</ol>
 </div>
