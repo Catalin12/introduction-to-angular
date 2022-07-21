@@ -21,5 +21,4 @@ export class SimpleButtonComponent {
 	public handleKeyUp(event: any): void {
 		this.greetingText = event.target.value;
 	}
-
 }
