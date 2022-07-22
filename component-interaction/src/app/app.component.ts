@@ -7,5 +7,4 @@ import { UserModel } from './user.model';
 	styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-	public users: UserModel[] = [];
 }

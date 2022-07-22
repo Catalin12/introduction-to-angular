@@ -14,6 +14,7 @@ export class UserListComponent implements OnInit {
 	public ngOnInit(): void {
 		this.prepareUsers();
 	}
+
 	private prepareUsers(): void {
 		this.users = [
 			{
@@ -40,7 +41,6 @@ export class UserListComponent implements OnInit {
 				name: "gandore-mihai",
 				email: "gandore-mh@gmail.xyz"
 			}
-
 		]
 	}
 }
