@@ -51,6 +51,9 @@ export class UserListComponent implements OnInit {
 	}
 
 	public handleDeleteClick(event: number) {
-		console.log(`Delete use with index ${event}`);
+		const indexOfObject = this.users.findIndex(object => {
+			return object.id === event;
+		});
+		this.users.splice(indexOfObject, 1);
 	}
 }
