@@ -50,10 +50,7 @@ export class UserListComponent implements OnInit {
 		]
 	}
 
-	public handleDeleteClick(event: number) {
-		const indexOfObject = this.users.findIndex(object => {
-			return object.id === event;
-		});
-		this.users.splice(indexOfObject, 1);
+	public handleDeleteClick(userId: number) {
+		this.users = this.users.filter((user: UserModel) => user.id !== userId);
 	}
 }
