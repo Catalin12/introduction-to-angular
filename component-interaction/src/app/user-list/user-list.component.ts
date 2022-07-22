@@ -18,29 +18,39 @@ export class UserListComponent implements OnInit {
 	private prepareUsers(): void {
 		this.users = [
 			{
+				id: 1,
 				name: "Catalin",
 				email: "catalin@gmail.xyz"
 			},
 			{
+				id: 2,
 				name: "Mihai",
 				email: "mihai@gmail.xyz"
 			},
 			{
+				id: 3,
 				name: "Daniel",
 				email: "daniel@gmail.xyz"
 			},
 			{
+				id: 4,
 				name: "Iulia",
 				email: "iulia@gmail.xyz"
 			},
 			{
+				id: 5,
 				name: "popina-florin",
 				email: "popina-florin@gmail.xyz"
 			},
 			{
+				id: 6,
 				name: "gandore-mihai",
 				email: "gandore-mh@gmail.xyz"
 			}
 		]
+	}
+
+	public handleDeleteClick(event: number) {
+		console.log(`Delete use with index ${event}`);
 	}
 }

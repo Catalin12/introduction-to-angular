@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { UserModel } from '../user.model';
 
@@ -10,4 +10,11 @@ import { UserModel } from '../user.model';
 export class UserDetailsComponent {
 	@Input()
 	public user?: UserModel;
+
+	@Output()
+	public deleteClick = new EventEmitter<number>();
+
+	public handleDeleteClick(): void {
+		this.deleteClick.emit(this.user?.id)
+	}
 }
