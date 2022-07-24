@@ -10,9 +10,11 @@ import { UserModel } from '../user.model';
 export class UserListComponent implements OnInit {
 	@Input()
 	public users: UserModel[] = [];
+	private identity: number = 0;
 
 	public ngOnInit(): void {
 		this.prepareUsers();
+		this.identity = Object.keys(this.users).length + 1;
 	}
 
 	private prepareUsers(): void {
@@ -50,7 +52,16 @@ export class UserListComponent implements OnInit {
 		]
 	}
 
-	public handleDeleteClick(userId: number) {
-		this.users = this.users.filter((user: UserModel) => user.id !== userId);
+	public onDeleteUserId(deleteUserId: number) {
+		this.users = this.users.filter((user: UserModel) => user.id !== deleteUserId);
+	}
+	public onButtonForInsertClicked(): void {
+		let user: UserModel = {
+			id: this.identity,
+			name: "random-name",
+			email: "random-emails"
+		};
+		this.users.push(user);
+		this.identity++;
 	}
 }

@@ -1,1 +1,2 @@
-<user-details *ngFor="let user of users" [user]="user" (deleteClick)="handleDeleteClick($event)"></user-details>
+<button class="succes" (click)="onButtonForInsertClicked()">Insert user!</button>
+<user-details *ngFor="let user of users" [user]="user" (deleteClick)="onDeleteUserId($event)"></user-details>
