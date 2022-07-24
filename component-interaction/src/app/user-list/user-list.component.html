@@ -1,1 +1,1 @@
-<user-details *ngFor="let user of users" [user]="user"></user-details>
+<user-details *ngFor="let user of users" [user]="user" (deleteClick)="handleDeleteClick($event)"></user-details>
