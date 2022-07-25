@@ -11,10 +11,13 @@ export class UserListComponent implements OnInit {
 	@Input()
 	public users: UserModel[] = [];
 	private identity: number = 0;
+	public selectUserDelete: number[] = [];
+	public isUserSelected: boolean = false;
 
 	public ngOnInit(): void {
 		this.prepareUsers();
 		this.identity = Object.keys(this.users).length + 1;
+		this.isUserSelected = false;
 	}
 
 	private prepareUsers(): void {
@@ -63,5 +66,27 @@ export class UserListComponent implements OnInit {
 		};
 		this.users.push(user);
 		this.identity++;
+	}
+	public onCheckboxChangeStatus(selectedUserId: number): void {
+		let founded: boolean = false;
+		this.selectUserDelete.forEach((item, index) => {
+			if (item === selectedUserId) {
+				this.selectUserDelete.splice(index, 1);
+				founded = true;
+			}
+		});
+		if (!founded) {
+			this.selectUserDelete.push(selectedUserId);
+		}
+		if (this.selectUserDelete.length) this.isUserSelected = true;
+		else this.isUserSelected = false;
+	}
+	public buttonDeleteSelectedUsers(): void {
+		if (!confirm("Esti sigur ca vrei sa stergi userii selectati?")) return;
+		this.selectUserDelete.forEach((deleteUserId) => {
+			this.users = this.users.filter((user: UserModel) => user.id !== deleteUserId);
+		});
+		this.selectUserDelete = [];
+		this.isUserSelected = false;
 	}
 }
