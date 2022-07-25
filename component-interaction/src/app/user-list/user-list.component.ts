@@ -10,13 +10,13 @@ import { UserModel } from '../user.model';
 export class UserListComponent implements OnInit {
 	@Input()
 	public users: UserModel[] = [];
-	private identity: number = 0;
+	private id: number = 0;
 	public selectUserDelete: number[] = [];
 	public isUserSelected: boolean = false;
 
 	public ngOnInit(): void {
 		this.prepareUsers();
-		this.identity = Object.keys(this.users).length + 1;
+		this.id = Object.keys(this.users).length + 1;
 		this.isUserSelected = false;
 	}
 
@@ -55,19 +55,19 @@ export class UserListComponent implements OnInit {
 		]
 	}
 
-	public onDeleteUserId(deleteUserId: number) {
+	public handleDeleteUser(deleteUserId: number) {
 		this.users = this.users.filter((user: UserModel) => user.id !== deleteUserId);
 	}
-	public onButtonForInsertClicked(): void {
+	public handleAddUserClick(): void {
 		let user: UserModel = {
-			id: this.identity,
+			id: this.id,
 			name: "random-name",
 			email: "random-emails"
 		};
 		this.users.push(user);
-		this.identity++;
+		this.id++;
 	}
-	public onCheckboxChangeStatus(selectedUserId: number): void {
+	public handleCheckboxChangeStatus(selectedUserId: number): void {
 		let founded: boolean = false;
 		this.selectUserDelete.forEach((item, index) => {
 			if (item === selectedUserId) {
@@ -81,7 +81,7 @@ export class UserListComponent implements OnInit {
 		if (this.selectUserDelete.length) this.isUserSelected = true;
 		else this.isUserSelected = false;
 	}
-	public buttonDeleteSelectedUsers(): void {
+	public handleButtonDeleteSelectedUsers(): void {
 		if (!confirm("Esti sigur ca vrei sa stergi userii selectati?")) return;
 		this.selectUserDelete.forEach((deleteUserId) => {
 			this.users = this.users.filter((user: UserModel) => user.id !== deleteUserId);

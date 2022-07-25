@@ -16,10 +16,10 @@ export class UserDetailsComponent {
 	@Output()
 	public selectClick = new EventEmitter<number>();
 
-	public onDeleteUserId(): void {
+	public handleDeleteClick(): void {
 		this.deleteClick.emit(this.user?.id);
 	}
-	public onCheckboxChangeStatus(): void {
+	public handleCheckboxChangeStatus(): void {
 		this.selectClick.emit(this.user?.id);
 	}
 }

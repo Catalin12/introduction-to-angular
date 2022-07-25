@@ -1,5 +1,5 @@
-<button class="succes" (click)="onButtonForInsertClicked()">Insert user!</button>
-<button [disabled]="!isUserSelected" (click)="buttonDeleteSelectedUsers()">Delete users</button>
+<button class="succes" (click)="handleAddUserClick()">Insert user!</button>
+<button [disabled]="!isUserSelected" (click)="handleButtonDeleteSelectedUsers()">Delete users</button>
 
-<user-details *ngFor="let user of users" [user]="user" (selectClick)="onCheckboxChangeStatus($event)"
-	(deleteClick)="onDeleteUserId($event)"></user-details>
+<user-details *ngFor="let user of users" [user]="user" (selectClick)="handleCheckboxChangeStatus($event)"
+	(deleteClick)="handleDeleteUser($event)"></user-details>
