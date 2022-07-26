@@ -68,14 +68,9 @@ export class UserListComponent implements OnInit {
 	}
 
 	public handleCheckboxChangeStatus(selectedUserId: number): void {
-		let founded: boolean = false;
-		this.selectedUserIds.forEach((item, index) => {
-			if (item === selectedUserId) {
-				this.selectedUserIds.splice(index, 1);
-				founded = true;
-			}
-		});
-		if (!founded) {
+		if (this.selectedUserIds.includes(selectedUserId)) {
+			this.selectedUserIds = this.selectedUserIds.filter((userId) => userId !== selectedUserId);
+		} else {
 			this.selectedUserIds.push(selectedUserId);
 		}
 	}
