@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { SortUsers } from './sort-users.pipe';
 import { UserDetailsComponent } from "./user-details/user-details.component"
 import { UserListComponent } from './user-list/user-list.component';
 
@@ -9,7 +10,8 @@ import { UserListComponent } from './user-list/user-list.component';
 	declarations: [
 		AppComponent,
 		UserDetailsComponent,
-		UserListComponent
+		UserListComponent,
+		SortUsers
 	],
 	imports: [
 		BrowserModule

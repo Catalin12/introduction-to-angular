@@ -49,6 +49,11 @@ export class UserListComponent implements OnInit {
 				id: 6,
 				name: "gandore-mihai",
 				email: "gandore-mh@gmail.xyz"
+			},
+			{
+				id: 7,
+				name: "Xin",
+				email: "xin-china.io"
 			}
 		]
 	}
@@ -65,6 +70,7 @@ export class UserListComponent implements OnInit {
 		};
 		this.users.push(user);
 		this.id++;
+		this.users = [...this.users]; //we do this to sort again list with users
 	}
 
 	public handleCheckboxChangeStatus(selectedUserId: number): void {
