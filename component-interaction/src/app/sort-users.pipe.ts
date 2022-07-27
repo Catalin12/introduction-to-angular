@@ -7,7 +7,6 @@ import { UserModel } from './user.model';
 export class SortUserPipe implements PipeTransform {
 
 	public transform(value: UserModel[], orderType: OrderTypeEnum) {
-
 		if (orderType === OrderTypeEnum.DSC) {
 			return value.sort((user: UserModel, nextUser: UserModel) => nextUser.name.toLowerCase() < user.name.toLowerCase() ? -1 : nextUser.name.toLowerCase() > user.name.toLowerCase() ? 1 : 0);
 		}
