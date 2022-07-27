@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { UserModel } from '../user.model';
+import { OrderTypeEnum } from "../task-status.enum";
 
 @Component({
 	selector: 'user-list',
@@ -12,6 +13,7 @@ export class UserListComponent implements OnInit {
 	public users: UserModel[] = [];
 	private id: number = 0;
 	public selectedUserIds: number[] = [];
+	public TaskStatus = OrderTypeEnum;
 
 	public ngOnInit(): void {
 		this.prepareUsers();
@@ -49,6 +51,11 @@ export class UserListComponent implements OnInit {
 				id: 6,
 				name: "gandore-mihai",
 				email: "gandore-mh@gmail.xyz"
+			},
+			{
+				id: 7,
+				name: "Xin",
+				email: "xin-china.io"
 			}
 		]
 	}
@@ -65,6 +72,7 @@ export class UserListComponent implements OnInit {
 		};
 		this.users.push(user);
 		this.id++;
+		this.users = [...this.users]; //we do this to change the reference of the array in order to enforce the CD (change detection)
 	}
 
 	public handleCheckboxChangeStatus(selectedUserId: number): void {
