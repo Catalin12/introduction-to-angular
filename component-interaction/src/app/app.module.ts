@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from "./app.component";
 import { SortUserPipe } from "./sort-users.pipe";
+import { AgeUserPipe } from './age-user-pipe';
 import { UserDetailsComponent } from "./user-details/user-details.component"
 import { UserListComponent } from "./user-list/user-list.component";
 
@@ -11,7 +12,8 @@ import { UserListComponent } from "./user-list/user-list.component";
 		AppComponent,
 		UserDetailsComponent,
 		UserListComponent,
-		SortUserPipe
+		SortUserPipe,
+		AgeUserPipe
 	],
 	imports: [
 		BrowserModule
