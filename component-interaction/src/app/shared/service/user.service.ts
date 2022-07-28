@@ -5,8 +5,9 @@ import { UserModel } from "src/app/user.model";
 export class UserService {
 
 	public users: UserModel[] = [];
-	private id: number = 0;
 	public selectedUserIds: number[] = [];
+
+	private id: number = 0;
 
 	public getUsers(): UserModel[] {
 
