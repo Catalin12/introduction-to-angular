@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from "./app.component";
-import { SortUserPipe } from "./sort-users.pipe";
-import { AgeUserPipe } from './age-user-pipe';
+import { SortUserPipe } from "./pipes/sort-users.pipe";
+import { AgeUserPipe } from './pipes/age-user-pipe';
 import { UserDetailsComponent } from "./user-details/user-details.component"
 import { UserListComponent } from "./user-list/user-list.component";
+import { IsAdultUserPipe } from './pipes/is-adult-user.pipe';
 
 @NgModule({
 	declarations: [
@@ -13,7 +14,8 @@ import { UserListComponent } from "./user-list/user-list.component";
 		UserDetailsComponent,
 		UserListComponent,
 		SortUserPipe,
-		AgeUserPipe
+		AgeUserPipe,
+		IsAdultUserPipe
 	],
 	imports: [
 		BrowserModule
