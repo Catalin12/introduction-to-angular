@@ -1,7 +1,8 @@
-<pre>
+<pre [ngClass]="{'adult': user!.dateOfBirth | ageUser | isAdult}">
 	Name: {{user?.name}}
 	Email: {{user?.email}}
-	<button (click)="handleDeleteClick()">Delete this user!</button>
-	<input type="checkbox" (click)="handleCheckboxChangeStatus()"><label> Select user</label>
+	Age: {{user!.dateOfBirth | ageUser}}
 </pre>
+<button (click)="handleDeleteClick()">Delete this user!</button>
+<input type="checkbox" (click)="handleCheckboxChangeStatus()"><label> Select user</label>
 <hr>

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { UserModel } from '../user.model';
+import { UserModel } from "../user.model";
 import { OrderTypeEnum } from "../task-status.enum";
 
 @Component({
@@ -25,37 +25,44 @@ export class UserListComponent implements OnInit {
 			{
 				id: 1,
 				name: "Catalin",
-				email: "catalin@gmail.xyz"
+				email: "catalin@gmail.xyz",
+				dateOfBirth: new Date(2000, 5, 11)
 			},
 			{
 				id: 2,
 				name: "Mihai",
-				email: "mihai@gmail.xyz"
+				email: "mihai@gmail.xyz",
+				dateOfBirth: new Date(2005, 11, 21)
 			},
 			{
 				id: 3,
 				name: "Daniel",
-				email: "daniel@gmail.xyz"
+				email: "daniel@gmail.xyz",
+				dateOfBirth: new Date(2010, 1, 3)
 			},
 			{
 				id: 4,
 				name: "Iulia",
-				email: "iulia@gmail.xyz"
+				email: "iulia@gmail.xyz",
+				dateOfBirth: new Date(1998, 3, 16)
 			},
 			{
 				id: 5,
 				name: "popina-florin",
-				email: "popina-florin@gmail.xyz"
+				email: "popina-florin@gmail.xyz",
+				dateOfBirth: new Date(1988, 5, 1)
 			},
 			{
 				id: 6,
 				name: "gandore-mihai",
-				email: "gandore-mh@gmail.xyz"
+				email: "gandore-mh@gmail.xyz",
+				dateOfBirth: new Date(2003, 11, 8)
 			},
 			{
 				id: 7,
 				name: "Xin",
-				email: "xin-china.io"
+				email: "xin-china.io",
+				dateOfBirth: new Date(1993, 12, 8)
 			}
 		]
 	}
@@ -68,7 +75,8 @@ export class UserListComponent implements OnInit {
 		let user: UserModel = {
 			id: this.id,
 			name: "random-name",
-			email: "random-emails"
+			email: "random-emails",
+			dateOfBirth: new Date()
 		};
 		this.users.push(user);
 		this.id++;

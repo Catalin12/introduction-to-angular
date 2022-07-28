@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { OrderTypeEnum } from "./task-status.enum";
+import { OrderTypeEnum } from "../task-status.enum";
 
-import { UserModel } from './user.model';
+import { UserModel } from '../user.model';
 
 @Pipe({ name: "sortUsers" })
 export class SortUserPipe implements PipeTransform {
