@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../shared/service/user.service';
 import { UserModel } from '../user.model';
-
 @Component({
 	selector: 'app-user-profile',
 	templateUrl: './user-profile.component.html',
@@ -10,7 +9,6 @@ import { UserModel } from '../user.model';
 })
 export class UserProfileComponent implements OnInit {
 	public user?: UserModel;
-
 
 	constructor(
 		private route: ActivatedRoute,
@@ -24,7 +22,6 @@ export class UserProfileComponent implements OnInit {
 
 		});
 
-		//console.log(this.route.snapshot.paramMap.("id"));
 	}
 
 }
