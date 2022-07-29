@@ -17,11 +17,18 @@ export class UserDetailsComponent {
 	@Output()
 	public onSelect = new EventEmitter<number>();
 
+	@Output()
+	public onInfo = new EventEmitter<UserModel>();
+
 	public handleDeleteClick(): void {
 		this.onDelete.emit(this.user?.id);
 	}
 
 	public handleCheckboxChangeStatus(): void {
 		this.onSelect.emit(this.user?.id);
+	}
+
+	public handleInfoClick(): void {
+		this.onInfo.emit(this.user);
 	}
 }

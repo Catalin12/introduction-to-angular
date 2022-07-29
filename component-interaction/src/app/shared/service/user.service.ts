@@ -1,16 +1,20 @@
-import { Injectable } from "@angular/core";
+import { Injectable, OnInit } from "@angular/core";
 import { UserModel } from "src/app/user.model";
+import { Router } from "@angular/router"
 
 @Injectable({ providedIn: "root" })
 export class UserService {
 
-	public users: UserModel[] = [];
+	private users: UserModel[] = [];
 	public selectedUserIds: number[] = [];
 
 	private id: number = 0;
 
-	public getUsers(): UserModel[] {
+	constructor() {
+		this.prepareUsers();
+	}
 
+	public prepareUsers(): void {
 		this.users = [
 			{
 				id: 1,
@@ -56,6 +60,9 @@ export class UserService {
 			}
 		]
 		this.id = Object.keys(this.users).length;
+	}
+
+	public getUsers(): UserModel[] {
 		return this.users;
 	}
 
@@ -97,5 +104,10 @@ export class UserService {
 
 	public getSelectedUsers(): number[] {
 		return this.selectedUserIds;
+	}
+
+	public getUserById(userId: number): UserModel | undefined {
+		for (let localUser of this.users) if (localUser.id === userId) return localUser;
+		return undefined;
 	}
 }

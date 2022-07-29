@@ -7,6 +7,10 @@ import { AgeUserPipe } from './pipes/age-user-pipe';
 import { UserDetailsComponent } from "./user-details/user-details.component"
 import { UserListComponent } from "./user-list/user-list.component";
 import { IsAdultUserPipe } from './pipes/is-adult-user.pipe';
+import { RouterModule } from '@angular/router';
+import { AppRoutes } from './routes/app.routing';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
 	declarations: [
@@ -15,10 +19,13 @@ import { IsAdultUserPipe } from './pipes/is-adult-user.pipe';
 		UserListComponent,
 		SortUserPipe,
 		AgeUserPipe,
-		IsAdultUserPipe
+		IsAdultUserPipe,
+		NotFoundComponent,
+		UserProfileComponent,
 	],
 	imports: [
-		BrowserModule
+		BrowserModule,
+		RouterModule.forRoot(AppRoutes)
 	],
 	providers: [],
 	bootstrap: [AppComponent]

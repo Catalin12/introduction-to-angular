@@ -12,14 +12,17 @@ import { UserService } from '../shared/service/user.service';
 export class UserListComponent implements OnInit {
 	@Input()
 	public users: UserModel[] = [];
+
 	public orderType = OrderTypeEnum;
 
 	public constructor(
-		private userService: UserService
-	) { };
+		private userService: UserService,
+
+	) { }
 
 	public ngOnInit(): void {
 		this.users = this.userService.getUsers();
+		console.log(this.users);
 	}
 
 	public handleDeleteUser(deleteUserId: number): void {
