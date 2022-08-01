@@ -1,1 +1,2 @@
-<user-details *ngIf="user" [user]="user"></user-details>>
+<user-details *ngIf="user; else userNotFound" [user]="user"></user-details>
+<ng-template #userNotFound>User not found</ng-template>

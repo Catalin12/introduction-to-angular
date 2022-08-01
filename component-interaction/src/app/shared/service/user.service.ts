@@ -1,6 +1,5 @@
 import { Injectable, OnInit } from "@angular/core";
 import { UserModel } from "src/app/user.model";
-import { Router } from "@angular/router"
 
 @Injectable({ providedIn: "root" })
 export class UserService {
@@ -107,7 +106,6 @@ export class UserService {
 	}
 
 	public getUserById(userId: number): UserModel | undefined {
-		for (let localUser of this.users) if (localUser.id === userId) return localUser;
-		return undefined;
+		return this.users.find(user => user.id === userId);
 	}
 }

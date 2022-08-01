@@ -3,7 +3,7 @@
 	Email: {{user?.email}}
 	Age: {{user!.dateOfBirth | ageUser}}
 </pre>
-<button [routerLink]="['/users', user?.id]">Info</button>
+<button [routerLink]="['/user', user?.id]">Info</button>
 <button (click)="handleDeleteClick()">Delete this user!</button>
 <input type="checkbox" (click)="handleCheckboxChangeStatus()"><label> Select user</label>
 <hr>

@@ -17,12 +17,10 @@ export class UserListComponent implements OnInit {
 
 	public constructor(
 		private userService: UserService,
-
 	) { }
 
 	public ngOnInit(): void {
 		this.users = this.userService.getUsers();
-		console.log(this.users);
 	}
 
 	public handleDeleteUser(deleteUserId: number): void {
