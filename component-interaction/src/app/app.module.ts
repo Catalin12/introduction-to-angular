@@ -11,7 +11,9 @@ import { IsAdultUserPipe } from "./pipes/is-adult-user.pipe"
 import { AppRoutes } from "./routes/app.routing"
 import { NotFoundComponent } from "./not-found/not-found.component"
 import { UserProfileComponent } from "./user-profile/user-profile.component";
-import { HomePageComponent } from './home-page/home-page.component'
+import { HomePageComponent } from "./home-page/home-page.component";
+
+
 
 @NgModule({
 	declarations: [
@@ -23,7 +25,7 @@ import { HomePageComponent } from './home-page/home-page.component'
 		IsAdultUserPipe,
 		NotFoundComponent,
 		UserProfileComponent,
-  HomePageComponent,
+		HomePageComponent,
 	],
 	imports: [
 		BrowserModule,

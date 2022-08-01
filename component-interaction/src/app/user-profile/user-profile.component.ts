@@ -4,9 +4,9 @@ import { ActivatedRoute } from "@angular/router"
 import { UserService } from "../shared/service/user.service"
 import { UserModel } from "../user.model"
 @Component({
-	selector: 'app-user-profile',
-	templateUrl: './user-profile.component.html',
-	styleUrls: ['./user-profile.component.css']
+	selector: "app-user-profile",
+	templateUrl: "./user-profile.component.html",
+	styleUrls: ["./user-profile.component.css"]
 })
 export class UserProfileComponent implements OnInit {
 	public user?: UserModel;
@@ -18,7 +18,7 @@ export class UserProfileComponent implements OnInit {
 
 	public ngOnInit(): void {
 		this.route.paramMap.subscribe(params => {
-			let userId = Number(params.get('id'));
+			let userId = Number(params.get("id"));
 			this.user = this.userService.getUserById(userId);
 		});
 	}

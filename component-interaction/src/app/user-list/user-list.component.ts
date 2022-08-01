@@ -1,13 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from "@angular/core";
 
 import { UserModel } from "../user.model";
 import { OrderTypeEnum } from "../task-status.enum";
-import { UserService } from '../shared/service/user.service';
+import { UserService } from "../shared/service/user.service";
 
 @Component({
-	selector: 'user-list',
-	templateUrl: './user-list.component.html',
-	styleUrls: ['./user-list.component.css']
+	selector: "user-list",
+	templateUrl: "./user-list.component.html",
+	styleUrls: ["./user-list.component.css"]
 })
 export class UserListComponent implements OnInit {
 	@Input()

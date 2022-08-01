@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+/* eslint-disable @angular-eslint/no-output-on-prefix */
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
-import { UserModel } from '../user.model';
+import { UserModel } from "../user.model";
 
 @Component({
 	selector: "user-details",

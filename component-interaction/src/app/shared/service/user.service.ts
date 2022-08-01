@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-member-accessibility */
 import { Injectable, OnInit } from "@angular/core";
 import { UserModel } from "src/app/user.model";
 
