@@ -6,12 +6,14 @@ import { RouterModule } from "@angular/router"
 import { AppComponent } from "./app.component";
 import { HomePageComponent } from "./home-page/home-page.component";
 import { AppRoutes } from "./routes/app.routing";
+import { NotFoundComponent } from "./not-found/not-found.component";
 
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		HomePageComponent,
+		NotFoundComponent,
 	],
 	imports: [
 		BrowserModule,
