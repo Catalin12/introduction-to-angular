@@ -8,17 +8,23 @@ import { ApiDogService } from "../shared/api-dog.service";
 })
 export class HomePageComponent implements OnInit {
 
-	public dogList: string[] = [];
+	public dogNames: string[] = [];
+	public recivedData: any;
 
-	public constructor(
-		private dogService: ApiDogService,
-	) { }
+	public constructor(private dogService: ApiDogService) { }
 
-	// eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method, no-empty-function
 	public ngOnInit(): void {
-		this.dogList = this.dogService.getDogBreed();
+		this.prepareDogList();
 	}
 
-
-
+	private prepareDogList(): void {
+		this.dogService.getDogBreedNames().subscribe((dataReceived: Object) => {
+			this.recivedData = dataReceived;
+			for (let breed in this.recivedData.message) {
+				if (this.recivedData.message[breed].length) {
+					for (let secondBreed of this.recivedData.message[breed]) this.dogNames.push(`${secondBreed} ${breed}`);
+				} else this.dogNames.push(breed);
+			}
+		});
+	}
 }
