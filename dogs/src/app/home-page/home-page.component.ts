@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 
-import { ApiDogService } from "../shared/api-dog.service";
+import { DogService } from "../shared/api-dog.service";
 
 @Component({
 	selector: "app-home-page",
@@ -9,22 +9,22 @@ import { ApiDogService } from "../shared/api-dog.service";
 })
 export class HomePageComponent implements OnInit {
 
-	public dogNames: string[] = [];
-	public recivedData: any;
+	public dogBreeds: string[] = [];
+	//public dogHasSubBreed:
 
-	public constructor(private dogService: ApiDogService) { }
+	public constructor(private dogService: DogService) { }
 
 	public ngOnInit(): void {
 		this.prepareDogList();
 	}
 
 	private prepareDogList(): void {
-		this.dogService.getDogBreedNames().subscribe((dataReceived: Object) => {
-			this.recivedData = dataReceived;
-			for (let breed in this.recivedData.message) {
-				if (this.recivedData.message[breed].length) {
-					for (let secondBreed of this.recivedData.message[breed]) this.dogNames.push(`${secondBreed} ${breed}`);
-				} else this.dogNames.push(breed);
+		this.dogService.getDogBreedNames().subscribe((data: any) => {
+			const recivedData: any = data;
+			for (let breed in recivedData.message) {
+				if (recivedData.message[breed].length) {
+					for (let subBreed of recivedData.message[breed]) this.dogBreeds.push(`${breed} ${subBreed}`);
+				} else this.dogBreeds.push(breed);
 			}
 		});
 	}

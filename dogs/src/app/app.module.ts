@@ -7,6 +7,7 @@ import { AppComponent } from "./app.component";
 import { HomePageComponent } from "./home-page/home-page.component";
 import { AppRoutes } from "./routes/app.routing";
 import { NotFoundComponent } from "./not-found/not-found.component";
+import { BreedPageComponent } from "./breed-page/breed-page.component";
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { NotFoundComponent } from "./not-found/not-found.component";
 		AppComponent,
 		HomePageComponent,
 		NotFoundComponent,
+		BreedPageComponent,
 	],
 	imports: [
 		BrowserModule,
