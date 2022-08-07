@@ -1,1 +1,11 @@
-<p>breed-page works!</p>
+<div class="center">
+    <button routerLink="">Home</button>
+    <h1>{{breedName}}</h1>
+    <img src="{{imageURL}}" alt="Loading image">
+    <div *ngIf="subBreedName.length">
+        <h2>Sub-breed</h2>
+        <div *ngFor="let localDogName of subBreedName">
+           <a [routerLink]="['/breed', breedName, localDogName]">{{localDogName}}</a><br>
+        </div>
+    </div>
+</div>

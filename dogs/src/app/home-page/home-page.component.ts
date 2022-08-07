@@ -10,7 +10,6 @@ import { DogService } from "../shared/api-dog.service";
 export class HomePageComponent implements OnInit {
 
 	public dogBreeds: string[] = [];
-	//public dogHasSubBreed:
 
 	public constructor(private dogService: DogService) { }
 
@@ -22,9 +21,7 @@ export class HomePageComponent implements OnInit {
 		this.dogService.getDogBreedNames().subscribe((data: any) => {
 			const recivedData: any = data;
 			for (let breed in recivedData.message) {
-				if (recivedData.message[breed].length) {
-					for (let subBreed of recivedData.message[breed]) this.dogBreeds.push(`${breed} ${subBreed}`);
-				} else this.dogBreeds.push(breed);
+				this.dogBreeds.push(breed);
 			}
 		});
 	}

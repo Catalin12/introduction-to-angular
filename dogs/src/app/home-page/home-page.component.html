@@ -1,6 +1,5 @@
 <div>
 	<ul>
-		<!-- Deocamdata doar afisez lista, voi face ruta in urmatorul pas -->
-		<li *ngFor="let dogName of dogBreeds">{{dogName}}</li>
+		<li *ngFor="let dogName of dogBreeds"><a [routerLink]="['/breed', dogName]">{{dogName}}</a></li>
 	</ul>
-</div>>
+</div>
