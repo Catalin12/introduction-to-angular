@@ -16,7 +16,7 @@ import { SubBreedPageComponent } from "./sub-breed-page/sub-breed-page.component
 		HomePageComponent,
 		NotFoundComponent,
 		BreedPageComponent,
-  		SubBreedPageComponent,
+		SubBreedPageComponent
 	],
 	imports: [
 		BrowserModule,

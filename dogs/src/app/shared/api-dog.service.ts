@@ -6,22 +6,22 @@ import { Observable } from "rxjs";
 
 export class DogService {
 
-
 	public constructor(
 		private http: HttpClient
 	) { }
 
-	public getDogBreedNames(): Observable<any> {
+	public getBreedNames(): Observable<any> {
 		return this.http.get("https://dog.ceo/api/breeds/list/all");
 	}
 
-	public getBreedImage(breed: string): Observable<any> {
-		return this.http.get(`https://dog.ceo/api/breed/${breed}/images/random`);
+	public getBreedImage(breedName: string): Observable<any> {
+		return this.http.get(`https://dog.ceo/api/breed/${breedName}/images/random`);
 	}
 
-	public getSubBreeds(breed: string): Observable<any> {
-		return this.http.get(`https://dog.ceo/api/breed/${breed}/list`)
+	public getSubBreedNames(breedName: string): Observable<any> {
+		return this.http.get(`https://dog.ceo/api/breed/${breedName}/list`)
 	}
+
 	public getSubBreedImage(breed: string, subBreed: string): Observable<any> {
 		return this.http.get(`https://dog.ceo/api/breed/${breed}/${subBreed}/images/random`);
 	}

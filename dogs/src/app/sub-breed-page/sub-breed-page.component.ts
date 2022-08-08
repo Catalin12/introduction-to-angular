@@ -18,7 +18,7 @@ export class SubBreedPageComponent implements OnInit {
 
 		private dogService: DogService,
 		private activedRoute: ActivatedRoute,
-		private dogRoute: Router
+		private router: Router
 	) { }
 
 	public ngOnInit(): void {
@@ -30,12 +30,8 @@ export class SubBreedPageComponent implements OnInit {
 			this.breedName = String(params.get("breedName"));
 			this.subBreedName = String(params.get("subBreed"));
 			this.dogService.getSubBreedImage(this.breedName, this.subBreedName).subscribe(
-				(response) => {
-					this.imageURL = response.message;
-      			},
-				(error) => {
-					this.dogRoute.navigate(["not-found"]);
-				}
+				(response) => this.imageURL = response.message,
+				(error) => this.router.navigate(["not-found"])
 			);
 		});
 	}

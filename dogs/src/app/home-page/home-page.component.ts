@@ -9,19 +9,19 @@ import { DogService } from "../shared/api-dog.service";
 })
 export class HomePageComponent implements OnInit {
 
-	public dogBreeds: string[] = [];
+	public breedNames: string[] = [];
 
 	public constructor(private dogService: DogService) { }
 
 	public ngOnInit(): void {
-		this.prepareDogList();
+		this.prepareBreedNames();
 	}
 
-	private prepareDogList(): void {
-		this.dogService.getDogBreedNames().subscribe((data: any) => {
+	private prepareBreedNames(): void {
+		this.dogService.getBreedNames().subscribe((data: any) => {
 			const recivedData: any = data;
 			for (let breed in recivedData.message) {
-				this.dogBreeds.push(breed);
+				this.breedNames.push(breed);
 			}
 		});
 	}

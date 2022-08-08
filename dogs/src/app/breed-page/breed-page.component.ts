@@ -12,40 +12,38 @@ export class BreedPageComponent implements OnInit {
 
 	public breedName: string = "";
 	public imageURL: any = "";
-	public subBreedName: string[] = [];
+	public subBreedNames: string[] = [];
 
 	public constructor(
 		private dogService: DogService,
 		private activedRoute: ActivatedRoute,
-		private dogRoute: Router
+		private router: Router
 	) { }
 
 	public ngOnInit(): void {
-		this.getBreedImage();
-		this.getSubBreed();
+		this.prepareBreedNameFromURL();
+		this.prepareSubBreed();
 	}
 
-	private getBreedImage(): void {
+	private prepareBreedNameFromURL(): void {
 		this.activedRoute.paramMap.subscribe(params => {
 			this.breedName = String(params.get("breedName"));
 			this.dogService.getBreedImage(this.breedName).subscribe(
 				(data: any) => {
 					this.imageURL = data.message;
-      			},
+				},
 				(error: any) => {
-					this.dogRoute.navigate(["**"]);
+					this.router.navigate(["not-found"]);
 				}
 			);
 		});
 	}
 
-	private getSubBreed(): void {
-		this.dogService.getSubBreeds(this.breedName).subscribe((data: any) => {
-			for(let dogName of data.message) {
-				this.subBreedName.push(dogName);
+	private prepareSubBreed(): void {
+		this.dogService.getSubBreedNames(this.breedName).subscribe((data: any) => {
+			for (let dogName of data.message) {
+				this.subBreedNames.push(dogName);
 			}
-	   });
-
+		});
 	}
-
 }
