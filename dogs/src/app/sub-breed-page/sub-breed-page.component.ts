@@ -22,18 +22,25 @@ export class SubBreedPageComponent implements OnInit {
 	) { }
 
 	public ngOnInit(): void {
-		this.getSubBreedImage();
+		this.prepareSubBreedImage();
 	}
 
-	private getSubBreedImage(): void {
+	private prepareSubBreedImage(): void {
 		this.activedRoute.paramMap.subscribe(params => {
 			this.breedName = String(params.get("breedName"));
 			this.subBreedName = String(params.get("subBreed"));
-			this.dogService.getSubBreedImage(this.breedName, this.subBreedName).subscribe(
-				(response) => this.imageURL = response.message,
-				(error) => this.router.navigate(["not-found"])
-			);
+			this.prepareSubBreedURL(this.breedName, this.subBreedName);
 		});
 	}
 
+	private prepareSubBreedURL(breedName: string, subBreedName: string): void {
+		this.dogService.getSubBreedImage(breedName, subBreedName).subscribe(
+			(response) => {
+				this.imageURL = response.message
+			},
+			(error) => {
+				this.router.navigate(["not-found"])
+			}
+		);
+	}
 }

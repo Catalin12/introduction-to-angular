@@ -29,10 +29,10 @@ export class BreedPageComponent implements OnInit {
 		this.activedRoute.paramMap.subscribe(params => {
 			this.breedName = String(params.get("breedName"));
 			this.dogService.getBreedImage(this.breedName).subscribe(
-				(data: any) => {
+				(data) => {
 					this.imageURL = data.message;
 				},
-				(error: any) => {
+				(error) => {
 					this.router.navigate(["not-found"]);
 				}
 			);
