@@ -39,7 +39,8 @@ export class SubBreedPageComponent implements OnInit {
 				this.imageURL = response.message
 			},
 			(error) => {
-				this.router.navigate(["not-found"])
+				// eslint-disable-next-line no-console
+				console.error(error);
 			}
 		);
 	}

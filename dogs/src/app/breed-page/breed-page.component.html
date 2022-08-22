@@ -1,11 +1,11 @@
 <div class="center">
-    <button routerLink="">Home</button>
+    <p-button routerLink="">Home</p-button>
     <h1>{{breedName}}</h1>
     <img src="{{imageURL}}" alt="Loading image">
     <div *ngIf="subBreedNames.length">
         <h2>Sub-breed</h2>
         <div *ngFor="let subBreedName of subBreedNames">
-            <a [routerLink]="['/breed', breedName, subBreedName]">{{subBreedName}}</a><br>
+            <p-button [routerLink]="['/breed', breedName, subBreedName]">{{subBreedName}} </p-button>
         </div>
     </div>
 </div>

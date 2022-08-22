@@ -33,7 +33,8 @@ export class BreedPageComponent implements OnInit {
 					this.imageURL = data.message;
 				},
 				(error) => {
-					this.router.navigate(["not-found"]);
+					// eslint-disable-next-line no-console
+					console.error(error);
 				}
 			);
 		});
